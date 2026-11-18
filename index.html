@@ -1,455 +1,94 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Tabata Fotografia | Momentos Eternos</title>
-
-<meta name="description" content="Tabata Fotografia: ensaios gestantes, newborn, batizados, aniversários, casamento civil, ensaios externos e em estúdio.">
-
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-<style>
-:root {
-  --marrom: #684936;
-  --escuro: #35251D;
-  --nude: #EAD8C8;
-  --branco: #FFFFFF;
-  --creme: #FBF8F4;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  margin: 0;
-  font-family: 'DM Sans', sans-serif;
-  background: var(--creme);
-  color: var(--escuro);
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-header {
-  background: white;
-  padding: 22px 7%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  box-shadow: 0 2px 15px #00000010;
-}
-
-.logo {
-  font-family: 'Playfair Display', serif;
-  font-size: 27px;
-  color: var(--marrom);
-}
-
-nav {
-  display: flex;
-  gap: 22px;
-  align-items: center;
-}
-
-nav a {
-  font-size: 14px;
-  font-weight: 600;
-}
-
-nav a:hover {
-  color: #A67C61;
-}
-
-.menu-btn {
-  display: none;
-  background: none;
-  border: none;
-  font-size: 27px;
-  cursor: pointer;
-}
-
-.botao {
-  display: inline-block;
-  background: var(--marrom);
-  color: white;
-  padding: 15px 28px;
-  border-radius: 4px;
-  font-weight: 600;
-  border: none;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.botao:hover {
-  background: var(--escuro);
-  transform: translateY(-2px);
-}
-
-.hero {
-  min-height: 590px;
-  background: linear-gradient(120deg, #F0E0D2, #FBF8F4);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 70px 9%;
-  gap: 60px;
-}
-
-.hero-texto {
-  max-width: 570px;
-}
-
-.subtitulo {
-  text-transform: uppercase;
-  letter-spacing: 4px;
-  font-size: 12px;
-  color: #A67C61;
-  font-weight: 700;
-}
-
-h1, h2, h3 {
-  font-family: 'Playfair Display', serif;
-}
-
-h1 {
-  font-size: clamp(42px, 5vw, 70px);
-  line-height: 1.15;
-  font-weight: 500;
-}
-
-h1 span {
-  color: #A67C61;
-  font-style: italic;
-}
-
-.hero p {
-  color: #6D594B;
-  line-height: 1.9;
-  margin-bottom: 30px;
-}
-
-.hero-imagem {
-  width: 400px;
-  min-height: 420px;
-  background: linear-gradient(135deg, #A98268, #E0C4AD);
-  border: 12px solid white;
-  box-shadow: 20px 20px 0 #C9AA92;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 25px;
-}
-
-.hero-imagem p {
-  font-family: 'Playfair Display', serif;
-  font-size: 30px;
-  color: white;
-}
-
-section {
-  padding: 95px 9%;
-}
-
-.titulo-secao {
-  text-align: center;
-  margin-bottom: 50px;
-}
-
-.titulo-secao h2 {
-  font-size: clamp(34px, 4vw, 49px);
-  font-weight: 500;
-  margin-bottom: 12px;
-}
-
-.titulo-secao p {
-  color: #806E62;
-  line-height: 1.8;
-}
-
-.servicos-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 22px;
-}
-
-.servico {
-  background: white;
-  padding: 35px;
-  border: 1px solid #EEE2D7;
-  transition: 0.3s;
-}
-
-.servico:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 10px 30px #68493615;
-}
-
-.servico-numero {
-  color: #A67C61;
-  font-family: 'Playfair Display', serif;
-  font-size: 27px;
-}
-
-.servico h3 {
-  font-size: 25px;
-  font-weight: 500;
-}
-
-.servico p {
-  color: #806E62;
-  line-height: 1.7;
-}
-
-.sobre {
-  background: var(--nude);
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 70px;
-  align-items: center;
-}
-
-.sobre-imagem {
-  height: 400px;
-  background: linear-gradient(135deg, #A98268, #DCC0A8);
-  border: 12px solid #F9F1E9;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  font-family: 'Playfair Display', serif;
-  font-size: 40px;
-  color: white;
-}
-
-.sobre h2 {
-  font-size: 45px;
-  font-weight: 500;
-}
-
-.sobre p {
-  line-height: 1.9;
-  color: #69584C;
-}
-
-.portfolio-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
-
-.portfolio-item {
-  height: 300px;
-  background: #D8BDA7;
-  display: flex;
-  align-items: end;
-  padding: 25px;
-  color: white;
-  font-family: 'Playfair Display', serif;
-  font-size: 28px;
-}
-
-.portfolio-item:nth-child(2) {
-  background: #C8A58C;
-}
-
-.portfolio-item:nth-child(3) {
-  background: #A98268;
-}
-
-.aviso {
-  text-align: center;
-  color: #806E62;
-  font-size: 13px;
-  margin-top: 25px;
-}
-
-.orcamento {
-  background: var(--escuro);
-  color: white;
-}
-
-.orcamento .titulo-secao p {
-  color: #EAD8C8;
-}
-
-form {
-  max-width: 800px;
-  margin: auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-}
-
-.campo {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.campo label {
-  font-size: 14px;
-}
-
-input, select, textarea {
-  padding: 15px;
-  border: 1px solid #D8BDA7;
-  border-radius: 4px;
-  font-family: 'DM Sans', sans-serif;
-  width: 100%;
-}
-
-.completo {
-  grid-column: 1 / -1;
-}
-
-form .botao {
-  background: #D8B79D;
-  color: var(--escuro);
-}
-
-.contato-links {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  flex-wrap: wrap;
-}
-
-.contato-links a {
-  color: var(--marrom);
-  font-weight: 600;
-}
-
-footer {
-  background: #241914;
-  color: white;
-  text-align: center;
-  padding: 45px 20px;
-}
-
-footer h2 {
-  font-weight: 500;
-}
-
-footer p {
-  color: #D6C5B8;
-  font-size: 13px;
-}
-
-.whatsapp {
-  position: fixed;
-  right: 20px;
-  bottom: 20px;
-  background: var(--marrom);
-  color: white;
-  padding: 15px 22px;
-  border-radius: 40px;
-  z-index: 100;
-  font-weight: 700;
-  box-shadow: 0 5px 20px #0003;
-}
-
-@media (max-width: 850px) {
-  .menu-btn {
-    display: block;
-  }
-
-  nav {
-    display: none;
-    position: absolute;
-    top: 75px;
-    left: 0;
-    right: 0;
-    background: white;
-    padding: 25px;
-    flex-direction: column;
-  }
-
-  nav.ativo {
-    display: flex;
-  }
-
-  .hero {
-    flex-direction: column;
-    padding: 60px 7%;
-  }
-
-  .hero-imagem {
-    width: 100%;
-    min-height: 300px;
-  }
-
-  .servicos-grid,
-  .portfolio-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .sobre {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 550px) {
-  section {
-    padding: 65px 7%;
-  }
-
-  .servicos-grid,
-  .portfolio-grid,
-  form {
-    grid-template-columns: 1fr;
-  }
-
-  .sobre h2 {
-    font-size: 36px;
-  }
-
-  .completo {
-    grid-column: auto;
-  }
-}
-
-.hero-imagem,.sobre-imagem{overflow:hidden;padding:0;background:#EAD8C8}
-.hero-imagem img,.sobre-imagem img{width:100%;height:100%;min-height:inherit;object-fit:cover;display:block}
-.sobre-imagem img{min-height:400px}
-.galeria-categoria{margin:55px 0 70px}
-.galeria-categoria h3{text-align:center;font-size:32px;font-weight:500;margin:0 0 10px}
-.galeria-categoria .descricao{text-align:center;color:#806E62;margin:0 0 28px;line-height:1.7}
-.fotos-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-.foto-galeria{border:0;padding:0;background:#EAD8C8;cursor:pointer;overflow:hidden;height:290px;border-radius:3px}
-.foto-galeria img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s}
-.foto-galeria:hover img{transform:scale(1.045)}
-.lightbox{position:fixed;inset:0;background:#170f0cf2;z-index:999;display:none;align-items:center;justify-content:center;padding:25px}
-.lightbox.aberto{display:flex}
-.lightbox img{max-width:min(100%,1100px);max-height:85vh;object-fit:contain}
-.lightbox-fechar{position:absolute;top:18px;right:24px;color:white;background:transparent;border:0;font-size:38px;cursor:pointer}
-@media(max-width:900px){.fotos-grid{grid-template-columns:repeat(3,1fr)}}
-@media(max-width:600px){.fotos-grid{grid-template-columns:repeat(2,1fr);gap:9px}.foto-galeria{height:220px}}
-
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tabata Fotografia | Momentos Eternos</title>
+  <meta name="description" content="Ensaios gestantes, newborn, batizados, aniversários, casamentos e fotografia em estúdio.">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --marrom: #684936;
+      --escuro: #35251D;
+      --nude: #EAD8C8;
+      --creme: #FBF8F4;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--creme); color: var(--escuro); font-family: 'DM Sans', sans-serif; }
+    a { color: inherit; text-decoration: none; }
+    h1, h2, h3 { font-family: 'Playfair Display', serif; font-weight: 500; }
+    section { padding: 85px 8%; }
+    header { position: sticky; top: 0; z-index: 100; background: white; padding: 22px 7%; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 2px 15px #00000010; }
+    .logo { color: var(--marrom); font: 27px 'Playfair Display', serif; }
+    nav { display: flex; gap: 20px; align-items: center; }
+    nav a { font-size: 14px; font-weight: 600; }
+    nav a:hover { color: #A67C61; }
+    .menu-btn { display: none; border: 0; background: none; font-size: 27px; cursor: pointer; }
+    .botao { display: inline-block; background: var(--marrom); color: white; border: 0; border-radius: 4px; padding: 15px 28px; font: 600 15px 'DM Sans', sans-serif; cursor: pointer; }
+    .botao:hover { background: var(--escuro); }
+    .subtitulo { color: #A67C61; font-size: 12px; letter-spacing: 4px; text-transform: uppercase; font-weight: 700; }
+    .hero { min-height: 580px; background: linear-gradient(120deg,#F0E0D2,#FBF8F4); display: grid; grid-template-columns: 1.3fr 1fr; align-items: center; gap: 60px; }
+    .hero h1 { font-size: clamp(42px,5vw,70px); line-height: 1.15; }
+    .hero h1 span { color: #A67C61; font-style: italic; }
+    .hero p, .sobre p { line-height: 1.9; color: #69584C; margin-bottom: 28px; }
+    .hero-imagem { height: 440px; border: 12px solid white; box-shadow: 20px 20px 0 #C9AA92; overflow: hidden; }
+    .hero-imagem img, .sobre-imagem img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .titulo-secao { text-align: center; margin-bottom: 45px; }
+    .titulo-secao h2 { font-size: clamp(34px,4vw,49px); margin: 12px 0; }
+    .titulo-secao p { color: #806E62; line-height: 1.7; }
+    .servicos-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 22px; }
+    .servico { background: white; border: 1px solid #EEE2D7; padding: 32px; }
+    .servico span { color: #A67C61; font: 27px 'Playfair Display',serif; }
+    .servico h3 { font-size: 24px; }
+    .servico p { color: #806E62; line-height: 1.7; }
+    .sobre { background: var(--nude); display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 70px; }
+    .sobre-imagem { height: 430px; border: 12px solid #F9F1E9; overflow: hidden; }
+    .sobre h2 { font-size: 44px; }
+    .categorias-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 28px; max-width: 1050px; margin: auto; }
+    .categoria-card { display: block; background: white; overflow: hidden; box-shadow: 0 12px 36px #35251d12; transition: transform .25s; }
+    .categoria-card:hover { transform: translateY(-5px); }
+    .categoria-card img { display: block; width: 100%; height: 430px; object-fit: cover; }
+    .categoria-card-texto { padding: 25px 27px 30px; }
+    .categoria-card h3 { font-size: 30px; margin: 0 0 8px; }
+    .categoria-card p { color: #806E62; line-height: 1.6; }
+    .categoria-card span { color: var(--marrom); font-weight: 700; }
+    .orcamento { background: var(--escuro); color: white; }
+    .orcamento .titulo-secao p { color: var(--nude); }
+    form { max-width: 800px; margin: auto; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .campo { display: flex; flex-direction: column; gap: 8px; }
+    .campo label { font-size: 14px; }
+    input,select,textarea { width: 100%; padding: 15px; border: 1px solid #D8BDA7; border-radius: 4px; font-family: inherit; }
+    .completo { grid-column: 1/-1; }
+    .orcamento .botao { background: #D8B79D; color: var(--escuro); }
+    .contato-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 30px; }
+    .contato-links a { color: var(--marrom); font-weight: 600; }
+    footer { background: #241914; color: white; text-align: center; padding: 45px 20px; }
+    footer p { color: #D6C5B8; font-size: 13px; }
+    .whatsapp { position: fixed; bottom: 20px; right: 20px; z-index: 100; background: var(--marrom); color: white; border-radius: 40px; padding: 15px 22px; font-weight: 700; box-shadow: 0 5px 20px #0003; }
+    @media(max-width:850px) {
+      .menu-btn { display: block; }
+      nav { display: none; position: absolute; top: 75px; left: 0; right: 0; background: white; padding: 25px; flex-direction: column; }
+      nav.ativo { display: flex; }
+      .hero,.sobre { grid-template-columns: 1fr; }
+      .hero-imagem { height: 360px; }
+      .servicos-grid { grid-template-columns: repeat(2,1fr); }
+    }
+    @media(max-width:600px) {
+      section { padding: 65px 7%; }
+      .servicos-grid,.categorias-grid,form { grid-template-columns: 1fr; }
+      .categoria-card img { height: 350px; }
+      .sobre h2 { font-size: 36px; }
+      .completo { grid-column: auto; }
+    }
+  </style>
 </head>
-
 <body>
 
 <header>
   <a href="#inicio" class="logo">Tabata Fotografia</a>
-
-  <button class="menu-btn" onclick="abrirMenu()" aria-label="Abrir menu">
-    ☰
-  </button>
-
+  <button class="menu-btn" onclick="abrirMenu()" aria-label="Abrir menu">☰</button>
   <nav id="menu">
     <a href="#inicio">Início</a>
     <a href="#servicos">Serviços</a>
@@ -461,286 +100,170 @@ footer p {
 </header>
 
 <main>
-
-<section class="hero" id="inicio">
-  <div class="hero-texto">
-    <div class="subtitulo">Fotografia com sensibilidade</div>
-
-    <h1>
-      Seu momento, uma
-      <span>memória para sempre.</span>
-    </h1>
-
-    <p>
-      Histórias especiais merecem ser lembradas com carinho.
-      Da espera de um bebê às celebrações em família,
-      cada detalhe importa.
-    </p>
-
-    <a href="#orcamento" class="botao">
-      Solicitar orçamento
-    </a>
-  </div>
-
-  <div class="hero-imagem"><img src="./imagens/fotografa.jpg" alt="Tabata, fotógrafa da Tabata Fotografia"></div>
-</section>
-
-<section id="servicos">
-  <div class="titulo-secao">
-    <div class="subtitulo">Nossos serviços</div>
-    <h2>Momentos únicos, registros eternos</h2>
-    <p>Escolha o ensaio que combina com sua história.</p>
-  </div>
-
-  <div class="servicos-grid">
-
-    <div class="servico">
-      <span class="servico-numero">01</span>
-      <h3>Ensaio Gestante</h3>
-      <p>Eternizando a beleza e a emoção da espera.</p>
+  <section class="hero" id="inicio">
+    <div>
+      <div class="subtitulo">Fotografia com sensibilidade</div>
+      <h1>Seu momento, uma <span>memória para sempre.</span></h1>
+      <p>Histórias especiais merecem ser lembradas com carinho. Da espera de um bebê às celebrações em família, cada detalhe importa.</p>
+      <a href="#orcamento" class="botao">Solicitar orçamento</a>
     </div>
-
-    <div class="servico">
-      <span class="servico-numero">02</span>
-      <h3>Ensaio Newborn</h3>
-      <p>Os primeiros detalhes de uma nova vida.</p>
+    <div class="hero-imagem">
+      <img src="./imagens/fotografa.jpg" alt="Tabata, fotógrafa da Tabata Fotografia">
     </div>
+  </section>
 
-    <div class="servico">
-      <span class="servico-numero">03</span>
-      <h3>Batizado</h3>
-      <p>Registrando momentos de fé e união familiar.</p>
+  <section id="servicos">
+    <div class="titulo-secao">
+      <div class="subtitulo">Nossos serviços</div>
+      <h2>Momentos únicos, registros eternos</h2>
+      <p>Escolha o ensaio que combina com sua história.</p>
     </div>
-
-    <div class="servico">
-      <span class="servico-numero">04</span>
-      <h3>Aniversário</h3>
-      <p>A alegria de celebrar cada nova fase.</p>
+    <div class="servicos-grid">
+      <div class="servico"><span>01</span><h3>Ensaio Gestante</h3><p>Eternizando a beleza e a emoção da espera.</p></div>
+      <div class="servico"><span>02</span><h3>Ensaio Newborn</h3><p>Os primeiros detalhes de uma nova vida.</p></div>
+      <div class="servico"><span>03</span><h3>Batizado</h3><p>Registrando momentos de fé e união familiar.</p></div>
+      <div class="servico"><span>04</span><h3>Aniversário</h3><p>A alegria de celebrar cada nova fase.</p></div>
+      <div class="servico"><span>05</span><h3>Casamento Civil</h3><p>Registrando o início de uma história a dois.</p></div>
+      <div class="servico"><span>06</span><h3>Ensaio Externo</h3><p>Retratos especiais em ambientes ao ar livre.</p></div>
+      <div class="servico"><span>07</span><h3>Ensaio Interno (Studio)</h3><p>Retratos cuidadosamente produzidos em estúdio.</p></div>
     </div>
+  </section>
 
-    <div class="servico">
-      <span class="servico-numero">05</span>
-      <h3>Casamento Civil</h3>
-      <p>Registrando o início de uma história a dois.</p>
+  <section class="sobre" id="sobre">
+    <div class="sobre-imagem">
+      <img src="./imagens/fotografa.jpg" alt="Tabata com sua câmera fotográfica">
     </div>
-
-    <div class="servico">
-      <span class="servico-numero">06</span>
-      <h3>Ensaio Externo</h3>
-      <p>Retratos especiais em ambientes ao ar livre.</p>
+    <div>
+      <div class="subtitulo">Por trás da lente</div>
+      <h2>Fotografar é guardar sentimentos.</h2>
+      <p>Na Tabata Fotografia, cada ensaio é uma oportunidade de transformar momentos importantes em lembranças que acompanham gerações.</p>
+      <p>Do planejamento ao registro final, a proposta é criar uma experiência acolhedora e especial para cada cliente.</p>
+      <a href="#orcamento" class="botao">Vamos conversar</a>
     </div>
+  </section>
 
-    <div class="servico">
-      <span class="servico-numero">07</span>
-      <h3>Ensaio Interno (Studio)</h3>
-      <p>Retratos cuidadosamente produzidos em estúdio.</p>
+  <section id="portfolio">
+    <div class="titulo-secao">
+      <div class="subtitulo">Portfólio</div>
+      <h2>Histórias que merecem ser vistas</h2>
+      <p>Explore nossas galerias de Gestantes e Newborn.</p>
     </div>
-
-  </div>
-</section>
-
-<section class="sobre" id="sobre">
-  <div class="sobre-imagem"><img src="./imagens/fotografa.jpg" alt="Tabata com sua câmera fotográfica"></div>
-
-  <div>
-    <div class="subtitulo">Por trás da lente</div>
-
-    <h2>Fotografar é guardar sentimentos.</h2>
-
-    <p>
-      Na Tabata Fotografia, cada ensaio é uma oportunidade
-      de transformar momentos importantes em lembranças
-      que acompanham gerações.
-    </p>
-
-    <p>
-      Do planejamento ao registro final, a proposta
-      é criar uma experiência acolhedora e especial
-      para cada cliente.
-    </p>
-
-    <a href="#orcamento" class="botao">
-      Vamos conversar
-    </a>
-  </div>
-</section>
-
-<section id="portfolio">
-  <div class="titulo-secao">
-    <div class="subtitulo">Portfólio</div>
-    <h2>Histórias que merecem ser vistas</h2>
-    <p>Conheça algumas das categorias de ensaios.</p>
-  </div>
-
-<div class="galeria-categoria" id="gestantes"><h3>Ensaios Gestantes</h3><p class="descricao">A beleza da espera, registrada com carinho em cada detalhe.</p><div class="fotos-grid">
-<button class="foto-galeria" type="button" onclick="abrirFoto(this.querySelector('img').src)" aria-label="Ampliar foto de gestante"><img src="./imagens/gestante-01.jpg" alt="Ensaio gestante" loading="lazy"></button>
-<button class="foto-galeria" type="button" onclick="abrirFoto(this.querySelector('img').src)" aria-label="Ampliar foto de gestante"><img src="./imagens/gestante-02.jpg" alt="Ensaio gestante" loading="lazy"></button>
-<button class="foto-galeria" type="button" onclick="abrirFoto(this.querySelector('img').src)" aria-label="Ampliar foto de gestante"><img src="./imagens/gestante-03.jpg" alt="Ensaio gestante" loading="lazy"></button>
-<button class="foto-galeria" type="button" onclick="abrirFoto(this.querySelector('img').src)" aria-label="Ampliar foto de gestante"><img src="./imagens/gestante-04.jpg" alt="Ensaio gestante" loading="lazy"></button>
-<button class="foto-galeria" type="button" onclick="abrirFoto(this.querySelector('img').src)" aria-label="Ampliar foto de gestante"><img src="./imagens/gestante-05.jpg" alt="Ensaio gestante" loading="lazy"></button>
-<button class="foto-galeria" type="button" onclick="abrirFoto(this.querySelector('img').src)" aria-label="Ampliar foto de gestante"><img src="./imagens/gestante-06.jpg" alt="Ensaio gestante" loading="lazy"></button>
-<button class="foto-galeria" type="button" onclick="abrirFoto(this.querySelector('img').src)" aria-label="Ampliar foto de gestante"><img src="./imagens/gestante-07.jpg" alt="Ensaio gestante" loading="lazy"></button>
-<button class="foto-galeria" type="button" onclick="abrirFoto(this.querySelector('img').src)" aria-label="Ampliar foto de gestante"><img src="./imagens/gestante-08.jpg" alt="Ensaio gestante" loading="lazy"></button>
-<button class="foto-galeria" type="button" onclick="abrirFoto(this.querySelector('img').src)" aria-label="Ampliar foto de gestante"><img src="./imagens/gestante-09.jpg" alt="Ensaio gestante" loading="lazy"></button>
-</div></div><div class="galeria-categoria" id="newborn"><h3>Newborn</h3><p class="descricao">Os primeiros dias de vida transformados em lembranças para sempre.</p><div class="fotos-grid">
-<button class="foto-galeria" type="button" onclick="abrirFoto(this.querySelector('img').src)" aria-label="Ampliar foto newborn"><img src="./imagens/newborn-01.jpg" alt="Ensaio newborn" loading="lazy"></button>
-<button class="foto-galeria" type="button" onclick="abrirFoto(this.querySelector('img').src)" aria-label="Ampliar foto newborn"><img src="./imagens/newborn-02.jpg" alt="Ensaio newborn" loading="lazy"></button>
-<button class="foto-galeria" type="button" onclick="abrirFoto(this.querySelector('img').src)" aria-label="Ampliar foto newborn"><img src="./imagens/newborn-03.jpg" alt="Ensaio newborn" loading="lazy"></button>
-<button class="foto-galeria" type="button" onclick="abrirFoto(this.querySelector('img').src)" aria-label="Ampliar foto newborn"><img src="./imagens/newborn-04.jpg" alt="Ensaio newborn" loading="lazy"></button>
-</div></div><p class="aviso">As imagens devem ter autorização dos responsáveis para divulgação pública.</p>
-</section>
-
-<section class="orcamento" id="orcamento">
-  <div class="titulo-secao">
-    <div class="subtitulo">Vamos registrar sua história?</div>
-    <h2>Solicite seu orçamento</h2>
-    <p>Preencha os dados e converse com a Tabata pelo WhatsApp.</p>
-  </div>
-
-  <form id="formOrcamento">
-
-    <div class="campo">
-      <label for="nome">Seu nome *</label>
-      <input type="text" id="nome" required maxlength="100">
+    <div class="categorias-grid">
+      <a class="categoria-card" href="./gestantes/">
+        <img src="./imagens/gestante-01.jpg" alt="Capa dos ensaios gestantes" loading="lazy">
+        <div class="categoria-card-texto">
+          <h3>Gestantes</h3>
+          <p>O amor começa antes do primeiro encontro. Conheça nossos ensaios.</p>
+          <span>Ver todas as 9 fotos →</span>
+        </div>
+      </a>
+      <a class="categoria-card" href="./newborn/">
+        <img src="./imagens/newborn-01.jpg" alt="Capa dos ensaios newborn" loading="lazy">
+        <div class="categoria-card-texto">
+          <h3>Newborn</h3>
+          <p>Pequenos detalhes, lembranças que duram para sempre.</p>
+          <span>Ver todas as 4 fotos →</span>
+        </div>
+      </a>
     </div>
+  </section>
 
-    <div class="campo">
-      <label for="telefone">Seu WhatsApp *</label>
-      <input type="tel" id="telefone" required maxlength="30">
+  <section class="orcamento" id="orcamento">
+    <div class="titulo-secao">
+      <div class="subtitulo">Vamos registrar sua história?</div>
+      <h2>Solicite seu orçamento</h2>
+      <p>Preencha os dados e converse com a Tabata pelo WhatsApp.</p>
     </div>
+    <form id="formOrcamento">
+      <div class="campo">
+        <label for="nome">Seu nome *</label>
+        <input type="text" id="nome" required maxlength="100">
+      </div>
+      <div class="campo">
+        <label for="telefone">Seu WhatsApp *</label>
+        <input type="tel" id="telefone" required maxlength="30">
+      </div>
+      <div class="campo">
+        <label for="servico">Tipo de serviço *</label>
+        <select id="servico" required>
+          <option value="">Selecione um serviço</option>
+          <option>Ensaio Gestante</option>
+          <option>Ensaio Newborn</option>
+          <option>Batizado</option>
+          <option>Aniversário</option>
+          <option>Casamento Civil</option>
+          <option>Ensaio Externo</option>
+          <option>Ensaio Interno (Studio)</option>
+        </select>
+      </div>
+      <div class="campo">
+        <label for="data">Data desejada</label>
+        <input type="date" id="data">
+      </div>
+      <div class="campo completo">
+        <label for="mensagem">Conte sobre seu ensaio</label>
+        <textarea id="mensagem" rows="5" maxlength="1200"></textarea>
+      </div>
+      <button type="submit" class="botao completo">Enviar orçamento pelo WhatsApp</button>
+      <p class="completo" style="font-size:12px;color:#EAD8C8">Você será direcionado ao WhatsApp para revisar e enviar sua mensagem.</p>
+    </form>
+  </section>
 
-    <div class="campo">
-      <label for="servico">Tipo de serviço *</label>
-
-      <select id="servico" required>
-        <option value="">Selecione um serviço</option>
-        <option>Ensaio Gestante</option>
-        <option>Ensaio Newborn</option>
-        <option>Batizado</option>
-        <option>Aniversário</option>
-        <option>Casamento Civil</option>
-        <option>Ensaio Externo</option>
-        <option>Ensaio Interno (Studio)</option>
-      </select>
+  <section id="contato">
+    <div class="titulo-secao">
+      <div class="subtitulo">Contato</div>
+      <h2>Vamos conversar?</h2>
+      <p>Estamos esperando para conhecer sua história.</p>
     </div>
-
-    <div class="campo">
-      <label for="data">Data desejada</label>
-      <input type="date" id="data">
+    <div class="contato-links">
+      <a href="https://wa.me/5519993121204" target="_blank" rel="noopener noreferrer">WhatsApp: (19) 99312-1204</a>
+      <a href="https://www.instagram.com/acadasorrisoumflash/" target="_blank" rel="noopener noreferrer">Instagram: @acadasorrisoumflash</a>
+      <a href="./clientes/">Área do Cliente</a>
     </div>
-
-    <div class="campo completo">
-      <label for="mensagem">Conte sobre seu ensaio</label>
-      <textarea id="mensagem" rows="5" maxlength="1200"></textarea>
-    </div>
-
-    <button type="submit" class="botao completo">
-      Enviar orçamento pelo WhatsApp
-    </button>
-
-    <p class="completo" style="font-size:12px;color:#EAD8C8">
-      Você será direcionado ao WhatsApp para revisar
-      e enviar sua mensagem.
-    </p>
-
-  </form>
-</section>
-
-<section id="contato">
-  <div class="titulo-secao">
-    <div class="subtitulo">Contato</div>
-    <h2>Vamos conversar?</h2>
-    <p>Estamos esperando para conhecer sua história.</p>
-  </div>
-
-  <div class="contato-links">
-
-    <a href="https://wa.me/5519993121204" target="_blank" rel="noopener noreferrer">
-      WhatsApp: (19) 99312-1204
-    </a>
-
-    <a href="https://www.instagram.com/acadasorrisoumflash/" target="_blank" rel="noopener noreferrer">
-      Instagram: @acadasorrisoumflash
-    </a>
-
-    <a href="./clientes/">
-      Área do Cliente
-    </a>
-
-  </div>
-</section>
-
+  </section>
 </main>
 
 <footer>
   <h2>Tabata Fotografia</h2>
-
   <p>Transformando momentos em memórias eternas.</p>
-
-  <p>
-    © <span id="ano"></span> Tabata Fotografia.
-    Todos os direitos reservados.
-  </p>
+  <p>© <span id="ano"></span> Tabata Fotografia. Todos os direitos reservados.</p>
 </footer>
 
-<a
-  href="https://wa.me/5519993121204"
-  class="whatsapp"
-  target="_blank"
-  rel="noopener noreferrer"
->
-  WhatsApp
-</a>
+<a class="whatsapp" href="https://wa.me/5519993121204" target="_blank" rel="noopener noreferrer">WhatsApp</a>
 
 <script>
-function abrirMenu() {
-  document.getElementById("menu").classList.toggle("ativo");
-}
+  function abrirMenu() {
+    document.getElementById('menu').classList.toggle('ativo');
+  }
 
-document.querySelectorAll("nav a").forEach(link => {
-  link.addEventListener("click", () => {
-    document.getElementById("menu").classList.remove("ativo");
+  document.querySelectorAll('nav a').forEach(link => {
+    link.addEventListener('click', () => {
+      document.getElementById('menu').classList.remove('ativo');
+    });
   });
-});
 
-document.getElementById("ano").textContent =
-  new Date().getFullYear();
+  document.getElementById('ano').textContent = new Date().getFullYear();
 
-document.getElementById("formOrcamento").addEventListener(
-  "submit",
-  function(event) {
+  document.getElementById('formOrcamento').addEventListener('submit', function(event) {
     event.preventDefault();
 
-    const nome = document.getElementById("nome").value.trim();
-    const telefone = document.getElementById("telefone").value.trim();
-    const servico = document.getElementById("servico").value;
-    const data = document.getElementById("data").value;
-    const mensagem = document.getElementById("mensagem").value.trim();
+    const nome = document.getElementById('nome').value.trim();
+    const telefone = document.getElementById('telefone').value.trim();
+    const servico = document.getElementById('servico').value;
+    const data = document.getElementById('data').value;
+    const mensagem = document.getElementById('mensagem').value.trim();
 
     const texto =
-      "Olá, Tabata! Gostaria de solicitar um orçamento.\n\n" +
-      "Nome: " + nome + "\n" +
-      "WhatsApp: " + telefone + "\n" +
-      "Serviço: " + servico + "\n" +
-      "Data desejada: " + (data || "A combinar") + "\n" +
-      "Detalhes: " + (mensagem || "Não informado");
+      'Olá, Tabata! Gostaria de solicitar um orçamento.\n\n' +
+      'Nome: ' + nome + '\n' +
+      'WhatsApp: ' + telefone + '\n' +
+      'Serviço: ' + servico + '\n' +
+      'Data desejada: ' + (data || 'A combinar') + '\n' +
+      'Detalhes: ' + (mensagem || 'Não informado');
 
-    const url =
-      "https://wa.me/5519993121204?text=" +
-      encodeURIComponent(texto);
-
-    window.open(url, "_blank", "noopener,noreferrer");
-  }
-);
-</script>
-
-
-<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Foto ampliada" onclick="fecharFoto(event)">
-<button class="lightbox-fechar" type="button" aria-label="Fechar" onclick="fecharFoto(event)">×</button><img id="fotoAmpliada" src="" alt="Fotografia ampliada"></div>
-<script>
-function abrirFoto(src){document.getElementById('fotoAmpliada').src=src;document.getElementById('lightbox').classList.add('aberto');document.body.style.overflow='hidden'}
-function fecharFoto(e){if(e.target.id==='lightbox'||e.target.classList.contains('lightbox-fechar')){document.getElementById('lightbox').classList.remove('aberto');document.getElementById('fotoAmpliada').src='';document.body.style.overflow=''}}
-document.addEventListener('keydown',e=>{if(e.key==='Escape'){document.getElementById('lightbox').classList.remove('aberto');document.getElementById('fotoAmpliada').src='';document.body.style.overflow=''}})
+    const url = 'https://wa.me/5519993121204?text=' + encodeURIComponent(texto);
+    window.open(url, '_blank', 'noopener,noreferrer');
+  });
 </script>
 </body>
 </html>
