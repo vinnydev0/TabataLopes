@@ -25,6 +25,10 @@
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       background: var(--creme);
@@ -91,6 +95,8 @@
       margin: 0 auto;
     }
 
+    /* GALERIA */
+
     .galeria {
       max-width: 1300px;
       margin: auto;
@@ -122,6 +128,8 @@
       transform: scale(1.05);
     }
 
+    /* ORÇAMENTO */
+
     .contato {
       text-align: center;
       background: var(--nude);
@@ -146,6 +154,7 @@
       padding: 16px 30px;
       border-radius: 4px;
       font-weight: 600;
+      transition: background .2s;
     }
 
     .botao:hover {
@@ -223,6 +232,8 @@
       font-size: 14px;
     }
 
+    /* RESPONSIVO */
+
     @media (max-width: 850px) {
       .galeria {
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -292,62 +303,64 @@
       </p>
     </section>
 
-    <!-- GALERIA COM OS CAMINHOS CORRIGIDOS -->
+    <!-- GALERIA ATUALIZADA: 7 FOTOS -->
 
     <section class="galeria" id="galeria">
 
       <figure class="foto">
-        <img src="../imagens/gestante-01.jpg"
-             alt="Ensaio gestante - Foto 1"
-             loading="lazy">
+        <img
+          src="../imagens/gestante-01.jpg"
+          alt="Ensaio gestante - Foto 1"
+          loading="lazy"
+        >
       </figure>
 
       <figure class="foto">
-        <img src="../imagens/gestante-02.jpg"
-             alt="Ensaio gestante - Foto 2"
-             loading="lazy">
+        <img
+          src="../imagens/gestante-02.jpg"
+          alt="Ensaio gestante - Foto 2"
+          loading="lazy"
+        >
       </figure>
 
       <figure class="foto">
-        <img src="../imagens/gestante-03.jpg"
-             alt="Ensaio gestante - Foto 3"
-             loading="lazy">
+        <img
+          src="../imagens/gestante-03.jpg"
+          alt="Ensaio gestante - Foto 3"
+          loading="lazy"
+        >
       </figure>
 
       <figure class="foto">
-        <img src="../imagens/gestante-04.jpg"
-             alt="Ensaio gestante - Foto 4"
-             loading="lazy">
+        <img
+          src="../imagens/gestante-04.jpg"
+          alt="Ensaio gestante - Foto 4"
+          loading="lazy"
+        >
       </figure>
 
       <figure class="foto">
-        <img src="../imagens/gestante-05.jpg"
-             alt="Ensaio gestante - Foto 5"
-             loading="lazy">
+        <img
+          src="../imagens/gestante-05.jpg"
+          alt="Ensaio gestante - Foto 5"
+          loading="lazy"
+        >
       </figure>
 
       <figure class="foto">
-        <img src="../imagens/gestante-06.jpg"
-             alt="Ensaio gestante - Foto 6"
-             loading="lazy">
+        <img
+          src="../imagens/gestante-07.jpg"
+          alt="Ensaio gestante - Foto 6"
+          loading="lazy"
+        >
       </figure>
 
       <figure class="foto">
-        <img src="../imagens/gestante-07.jpg"
-             alt="Ensaio gestante - Foto 7"
-             loading="lazy">
-      </figure>
-
-      <figure class="foto">
-        <img src="../imagens/gestante-08.jpg"
-             alt="Ensaio gestante - Foto 8"
-             loading="lazy">
-      </figure>
-
-      <figure class="foto">
-        <img src="../imagens/gestante-09.jpg"
-             alt="Ensaio gestante - Foto 9"
-             loading="lazy">
+        <img
+          src="../imagens/gestante-09.jpg"
+          alt="Ensaio gestante - Foto 7"
+          loading="lazy"
+        >
       </figure>
 
     </section>
@@ -382,7 +395,7 @@
     Todos os direitos reservados.
   </footer>
 
-  <!-- VISUALIZAÇÃO DAS FOTOS -->
+  <!-- VISUALIZAÇÃO AMPLIADA -->
 
   <div
     class="lightbox"
@@ -418,9 +431,11 @@
   </div>
 
   <script>
+    // ANO AUTOMÁTICO
     document.getElementById("ano").textContent =
       new Date().getFullYear();
 
+    // IMAGENS DA GALERIA
     const imagens = Array.from(
       document.querySelectorAll(".foto img")
     );
@@ -436,6 +451,7 @@
 
     let fotoAtual = 0;
 
+    // MOSTRAR FOTO
     function mostrarFoto(indice) {
       fotoAtual =
         (indice + imagens.length) % imagens.length;
@@ -447,18 +463,25 @@
         (fotoAtual + 1) + " / " + imagens.length;
     }
 
+    // ABRIR FOTO
     function abrirFoto(indice) {
       mostrarFoto(indice);
+
       lightbox.classList.add("ativo");
+
       document.body.style.overflow = "hidden";
     }
 
+    // FECHAR FOTO
     function fecharFoto() {
       lightbox.classList.remove("ativo");
+
       document.body.style.overflow = "";
+
       fotoAmpliada.removeAttribute("src");
     }
 
+    // CLIQUE NAS FOTOS
     imagens.forEach((imagem, indice) => {
       imagem.parentElement.addEventListener(
         "click",
@@ -466,6 +489,7 @@
       );
     });
 
+    // BOTÕES
     document.getElementById("fechar")
       .addEventListener("click", fecharFoto);
 
@@ -479,12 +503,14 @@
         mostrarFoto(fotoAtual + 1);
       });
 
+    // FECHAR CLICANDO NO FUNDO
     lightbox.addEventListener("click", event => {
       if (event.target === lightbox) {
         fecharFoto();
       }
     });
 
+    // CONTROLE PELO TECLADO
     document.addEventListener("keydown", event => {
       if (!lightbox.classList.contains("ativo")) {
         return;
