@@ -1,47 +1,508 @@
+
 <!DOCTYPE html>
-<html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Ensaios Gestantes | Tabata Fotografia</title>
-<meta name="description" content="Galeria de Ensaios Gestantes da Tabata Fotografia.">
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
-:root{--marrom:#684936;--escuro:#35251D;--nude:#EAD8C8}
-*{box-sizing:border-box}body{margin:0;background:#FBF8F4;color:var(--escuro);font-family:'DM Sans',sans-serif}
-a{color:inherit;text-decoration:none}header{background:white;padding:22px max(6%,20px);display:flex;justify-content:space-between;align-items:center;gap:20px;box-shadow:0 2px 15px #00000010}
-.logo{font-family:'Playfair Display',serif;color:var(--marrom);font-size:25px}.voltar{font-weight:600;font-size:14px;color:var(--marrom)}
-main{max-width:1320px;margin:auto;padding:65px 6% 85px}.intro{text-align:center;max-width:650px;margin:0 auto 45px}
-.eyebrow{font-size:12px;letter-spacing:4px;text-transform:uppercase;color:#A67C61;font-weight:700}
-h1{font:500 clamp(38px,5vw,62px) 'Playfair Display',serif;margin:12px 0}
-.intro p{line-height:1.8;color:#806E62}
-.fotos-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px}
-.foto-galeria{border:0;background:#EAD8C8;padding:0;height:390px;overflow:hidden;cursor:pointer}
-.foto-galeria img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .3s}
-.foto-galeria:hover img{transform:scale(1.04)}
-.cta{text-align:center;margin:55px auto 0}.botao{display:inline-block;background:var(--marrom);color:white;padding:16px 26px;border-radius:4px;font-weight:600}
-footer{text-align:center;background:#241914;color:#EAD8C8;padding:35px 15px;font-size:13px}
-.lightbox{position:fixed;inset:0;z-index:999;background:#170f0cf2;display:none;align-items:center;justify-content:center;padding:25px}
-.lightbox.aberto{display:flex}.lightbox img{max-width:min(100%,1100px);max-height:85vh;object-fit:contain}
-.lightbox-fechar{position:absolute;right:22px;top:15px;border:0;background:none;color:white;font-size:40px;cursor:pointer}
-@media(max-width:800px){.fotos-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.foto-galeria{height:320px}}
-@media(max-width:500px){header{flex-wrap:wrap}main{padding:45px 5%}.fotos-grid{gap:9px}.foto-galeria{height:235px}}
-</style></head>
-<body><header><a class="logo" href="../">Tabata Fotografia</a><a class="voltar" href="../#portfolio">← Voltar ao portfólio</a></header>
-<main><div class="intro"><div class="eyebrow">Nosso portfólio</div><h1>Ensaios Gestantes</h1><p>A delicadeza da espera registrada com amor, luz e sensibilidade.</p></div>
-<div class="fotos-grid"><button class="foto-galeria" type="button" onclick="abrirFoto(this.querySelector('img').src)" aria-label="Ampliar foto 1 de Ensaios Gestantes"><img src="../imagens/gestantes-01.jpg" alt="Foto 1 do ensaio Ensaios Gestantes" loading="lazy"></button>
-<button class="foto-galeria" type="button" onclick="abrirFoto(this.querySelector('img').src)" aria-label="Ampliar foto 2 de Ensaios Gestantes"><img src="../imagens/gestantes-02.jpg" alt="Foto 2 do ensaio Ensaios Gestantes" loading="lazy"></button>
-<button class="foto-galeria" type="button" onclick="abrirFoto(this.querySelector('img').src)" aria-label="Ampliar foto 3 de Ensaios Gestantes"><img src="../imagens/gestantes-03.jpg" alt="Foto 3 do ensaio Ensaios Gestantes" loading="lazy"></button>
-<button class="foto-galeria" type="button" onclick="abrirFoto(this.querySelector('img').src)" aria-label="Ampliar foto 4 de Ensaios Gestantes"><img src="../imagens/gestantes-04.jpg" alt="Foto 4 do ensaio Ensaios Gestantes" loading="lazy"></button>
-<button class="foto-galeria" type="button" onclick="abrirFoto(this.querySelector('img').src)" aria-label="Ampliar foto 5 de Ensaios Gestantes"><img src="../imagens/gestantes-05.jpg" alt="Foto 5 do ensaio Ensaios Gestantes" loading="lazy"></button>
-<button class="foto-galeria" type="button" onclick="abrirFoto(this.querySelector('img').src)" aria-label="Ampliar foto 6 de Ensaios Gestantes"><img src="../imagens/gestantes-06.jpg" alt="Foto 6 do ensaio Ensaios Gestantes" loading="lazy"></button>
-<button class="foto-galeria" type="button" onclick="abrirFoto(this.querySelector('img').src)" aria-label="Ampliar foto 7 de Ensaios Gestantes"><img src="../imagens/gestantes-07.jpg" alt="Foto 7 do ensaio Ensaios Gestantes" loading="lazy"></button>
-<button class="foto-galeria" type="button" onclick="abrirFoto(this.querySelector('img').src)" aria-label="Ampliar foto 8 de Ensaios Gestantes"><img src="../imagens/gestantes-08.jpg" alt="Foto 8 do ensaio Ensaios Gestantes" loading="lazy"></button>
-<button class="foto-galeria" type="button" onclick="abrirFoto(this.querySelector('img').src)" aria-label="Ampliar foto 9 de Ensaios Gestantes"><img src="../imagens/gestantes-09.jpg" alt="Foto 9 do ensaio Ensaios Gestantes" loading="lazy"></button></div>
-<div class="cta"><a class="botao" href="https://wa.me/5519993121204?text=Ol%C3%A1%2C%20Tabata%21%20Gostaria%20de%20saber%20mais%20sobre%20o%20ensaio%20gestantes.">Solicitar orçamento</a></div></main>
-<footer>© <span id="ano"></span> Tabata Fotografia · Todos os direitos reservados.</footer>
-<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Foto ampliada" onclick="fecharFoto(event)"><button class="lightbox-fechar" type="button" aria-label="Fechar" onclick="fecharFoto(event)">×</button><img id="fotoAmpliada" src="" alt="Fotografia ampliada"></div>
-<script>
-document.getElementById('ano').textContent=new Date().getFullYear();
-function abrirFoto(src){document.getElementById('fotoAmpliada').src=src;document.getElementById('lightbox').classList.add('aberto');document.body.style.overflow='hidden'}
-function fecharFoto(e){if(e.target.id==='lightbox'||e.target.classList.contains('lightbox-fechar'))fechar()}
-function fechar(){document.getElementById('lightbox').classList.remove('aberto');document.getElementById('fotoAmpliada').src='';document.body.style.overflow=''}
-document.addEventListener('keydown',e=>{if(e.key==='Escape')fechar()})
-</script></body></html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Ensaios Gestantes | Tabata Fotografia</title>
+  <meta name="description" content="Conheça os ensaios gestantes da Tabata Fotografia. Momentos especiais registrados com amor e sensibilidade.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --marrom: #684936;
+      --escuro: #35251D;
+      --nude: #EAD8C8;
+      --creme: #FBF8F4;
+      --dourado: #A67C61;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--creme);
+      color: var(--escuro);
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    header {
+      background: white;
+      padding: 22px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      box-shadow: 0 2px 15px #00000010;
+    }
+
+    .logo {
+      font-family: 'Playfair Display', serif;
+      color: var(--marrom);
+      font-size: 27px;
+    }
+
+    .voltar {
+      color: var(--marrom);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .intro {
+      background: linear-gradient(120deg, #F0E0D2, #FBF8F4);
+      text-align: center;
+      padding: 85px 20px 75px;
+    }
+
+    .subtitulo {
+      color: var(--dourado);
+      font-size: 12px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    h1, h2 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 500;
+    }
+
+    h1 {
+      font-size: clamp(42px, 6vw, 66px);
+      margin: 15px 0;
+      color: var(--marrom);
+    }
+
+    .intro p {
+      color: #806E62;
+      line-height: 1.8;
+      max-width: 620px;
+      margin: 0 auto;
+    }
+
+    .galeria {
+      max-width: 1300px;
+      margin: auto;
+      padding: 70px 6%;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .foto {
+      margin: 0;
+      background: var(--nude);
+      overflow: hidden;
+      border-radius: 5px;
+      cursor: pointer;
+      aspect-ratio: 3 / 4;
+      box-shadow: 0 5px 20px #35251d12;
+    }
+
+    .foto img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      transition: transform .4s;
+    }
+
+    .foto:hover img {
+      transform: scale(1.05);
+    }
+
+    .contato {
+      text-align: center;
+      background: var(--nude);
+      padding: 75px 20px;
+    }
+
+    .contato h2 {
+      font-size: 38px;
+      margin: 10px 0 15px;
+    }
+
+    .contato p {
+      color: #69584C;
+      line-height: 1.7;
+      margin-bottom: 30px;
+    }
+
+    .botao {
+      display: inline-block;
+      background: var(--marrom);
+      color: white;
+      padding: 16px 30px;
+      border-radius: 4px;
+      font-weight: 600;
+    }
+
+    .botao:hover {
+      background: var(--escuro);
+    }
+
+    footer {
+      background: #241914;
+      color: white;
+      padding: 35px 20px;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    /* VISUALIZAÇÃO AMPLIADA */
+
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      background: rgba(20, 12, 8, .96);
+      align-items: center;
+      justify-content: center;
+      padding: 55px 20px;
+    }
+
+    .lightbox.ativo {
+      display: flex;
+    }
+
+    .lightbox img {
+      max-width: 95%;
+      max-height: 85vh;
+      object-fit: contain;
+      border-radius: 4px;
+    }
+
+    .fechar {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      color: white;
+      font-size: 38px;
+      border: 0;
+      background: transparent;
+      cursor: pointer;
+    }
+
+    .seta {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      border: 0;
+      background: #ffffff25;
+      color: white;
+      font-size: 32px;
+      padding: 10px 17px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    .anterior {
+      left: 12px;
+    }
+
+    .proxima {
+      right: 12px;
+    }
+
+    .contador {
+      position: absolute;
+      bottom: 18px;
+      color: white;
+      font-size: 14px;
+    }
+
+    @media (max-width: 850px) {
+      .galeria {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 15px;
+      }
+    }
+
+    @media (max-width: 550px) {
+      header {
+        padding: 20px 6%;
+      }
+
+      .logo {
+        font-size: 21px;
+      }
+
+      .voltar {
+        font-size: 12px;
+      }
+
+      .galeria {
+        grid-template-columns: 1fr;
+        padding: 40px 6%;
+      }
+
+      .foto {
+        aspect-ratio: 3 / 4;
+      }
+
+      .contato h2 {
+        font-size: 31px;
+      }
+
+      .seta {
+        font-size: 24px;
+        padding: 8px 12px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <a href="../" class="logo">
+      Tabata Fotografia
+    </a>
+
+    <a href="../#portfolio" class="voltar">
+      ← Voltar ao portfólio
+    </a>
+  </header>
+
+  <main>
+
+    <section class="intro">
+      <div class="subtitulo">
+        Nosso portfólio
+      </div>
+
+      <h1>Ensaios Gestantes</h1>
+
+      <p>
+        A espera de um bebê é repleta de amor,
+        sonhos e emoções. Cada fotografia
+        eterniza um pedacinho dessa história.
+      </p>
+    </section>
+
+    <!-- GALERIA COM OS CAMINHOS CORRIGIDOS -->
+
+    <section class="galeria" id="galeria">
+
+      <figure class="foto">
+        <img src="../imagens/gestante-01.jpg"
+             alt="Ensaio gestante - Foto 1"
+             loading="lazy">
+      </figure>
+
+      <figure class="foto">
+        <img src="../imagens/gestante-02.jpg"
+             alt="Ensaio gestante - Foto 2"
+             loading="lazy">
+      </figure>
+
+      <figure class="foto">
+        <img src="../imagens/gestante-03.jpg"
+             alt="Ensaio gestante - Foto 3"
+             loading="lazy">
+      </figure>
+
+      <figure class="foto">
+        <img src="../imagens/gestante-04.jpg"
+             alt="Ensaio gestante - Foto 4"
+             loading="lazy">
+      </figure>
+
+      <figure class="foto">
+        <img src="../imagens/gestante-05.jpg"
+             alt="Ensaio gestante - Foto 5"
+             loading="lazy">
+      </figure>
+
+      <figure class="foto">
+        <img src="../imagens/gestante-06.jpg"
+             alt="Ensaio gestante - Foto 6"
+             loading="lazy">
+      </figure>
+
+      <figure class="foto">
+        <img src="../imagens/gestante-07.jpg"
+             alt="Ensaio gestante - Foto 7"
+             loading="lazy">
+      </figure>
+
+      <figure class="foto">
+        <img src="../imagens/gestante-08.jpg"
+             alt="Ensaio gestante - Foto 8"
+             loading="lazy">
+      </figure>
+
+      <figure class="foto">
+        <img src="../imagens/gestante-09.jpg"
+             alt="Ensaio gestante - Foto 9"
+             loading="lazy">
+      </figure>
+
+    </section>
+
+    <section class="contato">
+      <div class="subtitulo">
+        Registre esse momento
+      </div>
+
+      <h2>Vamos eternizar sua espera?</h2>
+
+      <p>
+        Entre em contato e solicite um orçamento
+        para seu ensaio gestante.
+      </p>
+
+      <a
+        class="botao"
+        href="https://wa.me/5519993121204?text=Ol%C3%A1%2C%20Tabata!%20Gostaria%20de%20um%20or%C3%A7amento%20para%20ensaio%20gestante."
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Solicitar orçamento
+      </a>
+    </section>
+
+  </main>
+
+  <footer>
+    © <span id="ano"></span>
+    Tabata Fotografia.
+    Todos os direitos reservados.
+  </footer>
+
+  <!-- VISUALIZAÇÃO DAS FOTOS -->
+
+  <div
+    class="lightbox"
+    id="lightbox"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Visualização de fotografias"
+  >
+    <button
+      class="fechar"
+      id="fechar"
+      aria-label="Fechar foto"
+      type="button"
+    >×</button>
+
+    <button
+      class="seta anterior"
+      id="anterior"
+      aria-label="Foto anterior"
+      type="button"
+    >‹</button>
+
+    <img id="fotoAmpliada" alt="Fotografia ampliada">
+
+    <button
+      class="seta proxima"
+      id="proxima"
+      aria-label="Próxima foto"
+      type="button"
+    >›</button>
+
+    <div class="contador" id="contador"></div>
+  </div>
+
+  <script>
+    document.getElementById("ano").textContent =
+      new Date().getFullYear();
+
+    const imagens = Array.from(
+      document.querySelectorAll(".foto img")
+    );
+
+    const lightbox =
+      document.getElementById("lightbox");
+
+    const fotoAmpliada =
+      document.getElementById("fotoAmpliada");
+
+    const contador =
+      document.getElementById("contador");
+
+    let fotoAtual = 0;
+
+    function mostrarFoto(indice) {
+      fotoAtual =
+        (indice + imagens.length) % imagens.length;
+
+      fotoAmpliada.src = imagens[fotoAtual].src;
+      fotoAmpliada.alt = imagens[fotoAtual].alt;
+
+      contador.textContent =
+        (fotoAtual + 1) + " / " + imagens.length;
+    }
+
+    function abrirFoto(indice) {
+      mostrarFoto(indice);
+      lightbox.classList.add("ativo");
+      document.body.style.overflow = "hidden";
+    }
+
+    function fecharFoto() {
+      lightbox.classList.remove("ativo");
+      document.body.style.overflow = "";
+      fotoAmpliada.removeAttribute("src");
+    }
+
+    imagens.forEach((imagem, indice) => {
+      imagem.parentElement.addEventListener(
+        "click",
+        () => abrirFoto(indice)
+      );
+    });
+
+    document.getElementById("fechar")
+      .addEventListener("click", fecharFoto);
+
+    document.getElementById("anterior")
+      .addEventListener("click", () => {
+        mostrarFoto(fotoAtual - 1);
+      });
+
+    document.getElementById("proxima")
+      .addEventListener("click", () => {
+        mostrarFoto(fotoAtual + 1);
+      });
+
+    lightbox.addEventListener("click", event => {
+      if (event.target === lightbox) {
+        fecharFoto();
+      }
+    });
+
+    document.addEventListener("keydown", event => {
+      if (!lightbox.classList.contains("ativo")) {
+        return;
+      }
+
+      if (event.key === "Escape") {
+        fecharFoto();
+      }
+
+      if (event.key === "ArrowLeft") {
+        mostrarFoto(fotoAtual - 1);
+      }
+
+      if (event.key === "ArrowRight") {
+        mostrarFoto(fotoAtual + 1);
+      }
+    });
+  </script>
+
+</body>
+</html>
